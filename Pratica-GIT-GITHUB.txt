@@ -1,0 +1,93 @@
+- Comandos básicos para o bom desempenho no GIT BASH:
+
+> Acessar pasta: $ cd nome_pasta/
+> Listar pasta: $ dir
+> Retornar 1 pasta: $ cd ..
+> Criar pasta: $ mkdir nome_pasta
+> Deletar arquivo: $ del nome_arquivo
+> Deletar pasta com todos os arquivos: $ rmdir nome_pasta /s /q
+> limpar tela: tecla(CTRL + L) ou $ cls
+> Alto completar nome ao digitar: tecla(TAB)
+> Criar arquivo para pasta: $ echo nome_pasta > nome_arquivo.extensão
+> Iniciar repositório: $ git init
+> Mover e dar inicio ao versionamento: $ git add * ou git add . 
+> Criar commits: $ git commit
+
+- Criar uma conta no GITHUB:
+
+> Acessar o site: https://github.com/
+> clique sobre “Sign up” localizado no topo à direita
+> Após clicar, o formulário estará disponível
+> Insira os dados (nome de usuário, e-mail e senha)
+> Resolva o desafio para verificar a conta
+> Clique sobre “Create account”
+> Após a criação da sua conta, basta clicar sobre “Sign in”
+> Insira seu e-mail e senha, definidos no ato da criação da sua conta
+> Clica sobre “Sign in”
+
+- Criando um repositório no GITHUB:
+
+> Clica sobre o botão “+” e selecionar a opção “New repository” 
+> Insira um nome ao repositório e uma descrição (opcional)
+> Defina a visibilidade do repositório (público ou privado) 
+> Clica sobre o botão “Create repository”
+
+- Criar ser perfil no GIT BASH:
+
+> Limpar e-mail no perfil: $ git config --global --unset user.email
+> Limpar nome no perfil: $ git config --global --unset user.name
+> Listar as configurações: $ git config --list
+> Adicionar email no perfil: $ git config --global user.email "o mesmo usado no github"
+> Adicionar nome no perfil: $ git config --global user.name "o mesmo usado no github"
+
+- Clonar Repositório Remoto do GITHUB para GIT BASH:
+
+> No GITHUB: acima da lista de arquivos, clique em  "Code"
+> No GITHUB: copie o endereço do repositório
+> No Git Bash: $ git clone cole_url_copiada
+
+- Configuração do Repositório Remoto no GIT BASH:
+> Adicionar repositório a máquina: $ git remote add origen cole_url_repositorio_github
+> Listar repositórios cadastrados: $ git remote -v 
+
+- Criando pasta no GIT BASH:
+
+> Acessar via terminal(Git Bash Here) a pasta do seu projeto
+> Listar pastas e arquivos: $ ls
+> Listar pastas e arquivos ocultos: $ ls -a
+> Acessar a pasta do repositório: $ cd nome_pasta/
+> Criar pasta: $ mkdir nome_pasta 
+> Acessar a pasta: $ cd nome_pasta/
+> Inicializar o repositório: $ git init
+
+- Adicionar um arquivo ou pasta no repositório:
+
+> Adicionar todas as alterações do projeto: $ git add *
+> Criar commit: $ git commit -m "commit inicial"
+
+- Subir repositório do GIT BASH para GITHUB:
+
+> Monitorar status: $ git status
+> Adicionar todo diretório: $ git add *
+> Monitorar novamente: $ git status
+> Criar commit: $ git commit -m "alterações"
+> Verificar url do repositório: $ git remote show origen -n
+** Caso der erro, poderá comerçar o passo de clonar o repositório remoto 
+novamente.***
+> Remover repositório remoto: $ git remote rm
+** Caso não der erro, continua...***
+> Enviar projeto local para github: $ git push origin master ou main
+> Listar repositório remoto: $ git remote -v
+
+- Resolvendo Conflitos:
+
+** Se caso o push der erro...***
+> Integrar os conteúdos: $ git pull origin master ou main
+** Se o erro persistir, organizar no próprio arquivo.***
+
+- Clonar Arquivo do GITHUB para GIT BASH:
+
+> Clonar arquivo ou pasta: $ git clone url_arquivo
+> Acessar a pasta clonada: $ cd nome_pasta/
+> Visualizar arquivos ocultos: $ ls -a
+> Listar repositório remoto: $ git remote -v

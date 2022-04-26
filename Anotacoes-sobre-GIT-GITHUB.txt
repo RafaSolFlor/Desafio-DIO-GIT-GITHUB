@@ -1,0 +1,64 @@
+- O que é o GIT?
+Projeto de código aberto e com manutenção ativa.
+É um Sistema de Controle de Versão Distribuída (DVCS).
+A cópia de trabalho de todo desenvolvedor do código também é um repositório que pode conter
+o histórico das alterações.
+
+- O que é SHA?
+É um conjunto de funções HASH criptográficas projetadas pela NSA(Agência de Segurança Nacional
+dos EUA).
+
+- O que é SHA1?
+É uma sequência de 40 caracteres hexadecimais.
+
+- Objetos Internos:
+	- Blobs: o GIT gera SHA1 e armazena metadados(bloco básico de composição). Possui o 
+	SHA1 do arquivo.
+		> Códigos no Git Bash:
+	  	  * Gerar SHA1: $ echo 'conteudo' | git hash-object --stdin
+	        	        $ echo -e 'blob 9/0conteudo' | openssl sha1
+		                $ echo -e 'conteudo' | openssl sha1
+
+	- Trees: armazena e aponta para um tipo de Blobs. Responsável por montar a estrutura
+	de um arquivo. Possuem o SHA1 do metadados.
+
+	- Commits: são unidades estruturais de um cronograma de projeto GIT. Captura o estado
+	de um projeto naquele momento. Marca o fim de uma transição.
+
+- Sistema distribuído seguro:
+Todos os objetos no repositório do GIT são protegidos com um algorítmo de HASH de criptografia
+chamado SHA1.
+Isso protege o código e o histórico contra alterações acidentais ou maliciosas. Garante que 
+tenha rastreabilidade total.
+
+- GIT BASH: aplicativo para ambientes windows que oferece a camada de emulação de linha de 
+comando GIT.
+
+- Chave SSH(Secure Socket Shell): é um protocolo que permite a conexão com servidores remotos,
+de forma criptografada e mais segura, usando um par de chaves RSA.
+	> Códigos no Git Bash:
+	  * Verificar Chave: $ ls -al ~/.ssh
+	  (tipos de chaves: id_rsa.pub / id_ecdsa.pub / id_ed25519.pub)
+	  * Gerar chave: $ ssh-keygen -t ed25519 -C "seu email cadastrado no github"
+	  * Visualizar conteúdo das chaves: $ cat id_ed25519.pub
+	  * Visualizar pasta que contém a chave: $ pwd
+
+- SSH-AGENT: segura as chaves e senhas privadas com segurança e as mantém prontas para uso
+pelo SSH.
+	> Códigos no Git Bash:
+	  * Verificar se está rodando em 2º plano: $ eval 'ssh-agent'
+	  * Adicionar chave privada ao ssh-agent: $ ssh-add id_ed25519
+	  * Estartar um projeto: $ eval $(ssh-agent -s)
+
+- Ciclo de vida:
+	> Untracked(não monitorado) é o arquivo criado;
+	> O comando git add adiciona o arquivo para o modo Staged(encerrado);
+	> Quando faz alterações no arquivo, o git confere a chave SHA1, e caso tenha diferença,
+	  ela muda de Unmodified(não modificado) para Modified(modificado). Sendo necessário 
+	  usar o git add para mudar o arquivo para Staged;
+	> Quando se deleta um arquivo, ele volta ao estado Untraked;
+	> Quando o arquivo está em Staged, ele está aguardando o Commit para finalizar o processo
+	  virando um arquivo Commit;
+	> O Commit, finaliza todo o processo, transformando os arquivos em Unmodified.
+
+
